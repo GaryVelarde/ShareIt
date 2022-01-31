@@ -1,19 +1,20 @@
-﻿
-@{
+﻿@{
     Layout = null;
    
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
     <title>ShareIt</title>
     <link href="~/Resources/css/adminlte.css" rel="stylesheet" />
     <script src="~/Resources/js/jquery-3.6.0.min.js"></script>
     <script src="~/Resources/js/adminlte.js"></script>
     <script src="~/Resources/js/adminlte.min.js"></script>
+    <script src="~/Resources/js/bootstrap/js/bootstrap.js"></script>
+    <link href="~/Resources/css/fontawesome-free/css/all.css" rel="stylesheet" />
+    <script src="~/Resources/js/Publicacion.js"></script>
 </head>
 <body>
     <!-- Content Wrapper. Contains page content -->
@@ -47,7 +48,10 @@
                                         <div class="user-block">
                                             <img class="img-circle img-bordered-sm" src="~/Resources/img/Publicaciones/user7-128x128.jpg" alt="User Image">
                                             <span class="username">
-                                                <input class="form-control form-control-sm" style="height: 50px;" placeholder="¿Qué estás pensando?">
+                                                <div class="form-control form-control-sm" style="height: 45px; cursor: pointer;" onclick="$('#mdCrearPublicacion').modal('show');">
+                                                    <p style="line-height: 35px; pointer-events: none;">¿Qué estás pensando?</p>
+                                                </div>
+                                                <!--<input id="ipQueEstasBuscando" onclick=" $('#mdCrearPublicacion').modal('show');" class="form-control form-control-sm" style="height: 50px;" placeholder="¿Qué estás pensando?">-->
                                             </span>
                                         </div>
 
@@ -333,21 +337,51 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <div class="modal fade" id="modal-xl">
+    <div class="modal" id="mdCrearPublicacion">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Extra Large Modal</h4>
+                    <h4 class="modal-title">
+                        Crear publicación
+                    </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>One fine body&hellip;</p>
+                    <div class="post clearfix" style="height: 50px">
+                        <div class="user-block" style="height: 50px;">
+                            <img class="img-circle img-bordered-sm" src="~/Resources/img/Publicaciones/user7-128x128.jpg" alt="User Image">
+                            <span class="username" style="display: flex; width: 90%">
+                                <div style="width: 80%"><p>Gary Velarde</p></div>
+                                <div style="width: 20%; display: flex;">
+                                    <p><i class="fas fa-lock"></i> Privacidad&nbsp;&nbsp;&nbsp;</p>
+                                    <select style="margin-bottom: 50px;">
+                                        <option>Solo yo</option>
+                                        <option selected>Público</option>
+                                    </select>
+                                </div>
+                            </span>
+                        </div>
+
+                    </div>
+                    <textarea id="ipPublicacionTexto" class="txtAreaShareIt" onkeyup="textAreaAdjust(this);" placeholder=""></textarea>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Agregar archivos
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="file" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Publicar</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -355,5 +389,18 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <script>
+        var nombreCompleto = '@Session["sUser"].ToString()';
+        if (nombreCompleto == null || nombreCompleto == "") {
+            document.getElementById('ipPublicacionTexto').placeholder = '¿Qué estás pensando?';
+        } else {
+            let nombres = nombreCompleto.split('‡');
+            document.getElementById('ipPublicacionTexto').placeholder = '¿Qué estás pensando, ' + nombres[0] + '?';
+            console.log(nombreCompleto);
+            console.log(nombres[0]);
+        }
+        
+
+    </script>
 </body>
 </html>

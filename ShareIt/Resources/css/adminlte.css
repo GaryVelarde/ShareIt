@@ -31220,3 +31220,12 @@ a.text-muted:hover {
   color: #ffffff;
 }
 /*# sourceMappingURL=adminlte.css.map */
+.txtAreaShareIt {
+    width: 100%;
+    border: 0px;
+    resize: none;
+    font-size: 25px;
+}
+    .txtAreaShareIt:focus {
+        outline: none;
+    }
