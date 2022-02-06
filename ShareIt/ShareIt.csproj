@@ -101,6 +101,23 @@
     <Content Include="Resources\css\alt\adminlte.pages.min.css" />
     <Content Include="Resources\css\alt\adminlte.plugins.css" />
     <Content Include="Resources\css\alt\adminlte.plugins.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\all.css" />
+    <Content Include="Resources\css\fontawesome-free\css\all.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\brands.css" />
+    <Content Include="Resources\css\fontawesome-free\css\brands.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\fontawesome.css" />
+    <Content Include="Resources\css\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\regular.css" />
+    <Content Include="Resources\css\fontawesome-free\css\regular.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\solid.css" />
+    <Content Include="Resources\css\fontawesome-free\css\solid.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="Resources\css\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="Resources\css\fontawesome-free\css\v4-shims.css" />
+    <Content Include="Resources\css\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.svg" />
     <Content Include="Resources\img\Publicaciones\photo1.png" />
     <Content Include="Resources\img\Publicaciones\photo2.png" />
     <Content Include="Resources\img\Publicaciones\photo3.jpg" />
@@ -115,12 +132,17 @@
     <Content Include="Resources\img\Publicaciones\user8-128x128.jpg" />
     <Content Include="Resources\js\adminlte.js" />
     <Content Include="Resources\js\adminlte.min.js" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.js" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.min.js" />
     <Content Include="Resources\js\demo.js" />
     <Content Include="Resources\js\jquery-3.6.0.min.js" />
     <Content Include="Resources\js\Login.js" />
     <Content Include="Resources\js\pages\dashboard.js" />
     <Content Include="Resources\js\pages\dashboard2.js" />
     <Content Include="Resources\js\pages\dashboard3.js" />
+    <Content Include="Resources\js\Publicacion.js" />
     <Content Include="Resources\Login\css\main.css" />
     <Content Include="Resources\Login\css\util.css" />
     <Content Include="Resources\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -272,6 +294,24 @@
     <Content Include="Resources\Login\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Resources\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\ShareIt\Index.cshtml" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Resources\js\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Login\Registrate.cshtml" />
+    <Content Include="Views\Login\DatosPersonales.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -282,6 +322,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{8e6a1072-7a0e-401a-b03a-f1835aca9426}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{264c8765-8ca1-4299-b225-073757e14ee6}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
