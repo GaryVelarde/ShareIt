@@ -310,6 +310,8 @@
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.ttf" />
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Login\Registrate.cshtml" />
+    <Content Include="Views\Login\DatosPersonales.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -320,6 +322,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{8e6a1072-7a0e-401a-b03a-f1835aca9426}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{264c8765-8ca1-4299-b225-073757e14ee6}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

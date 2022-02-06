@@ -1,0 +1,11 @@
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\bin\Debug\Negocio.dll
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\bin\Debug\Negocio.pdb
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\bin\Debug\Datos.dll
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\bin\Debug\Entidad.dll
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\bin\Debug\Datos.pdb
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\bin\Debug\Entidad.pdb
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.dll
+D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.pdb

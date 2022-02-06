@@ -1,24 +1,16 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V18</title>
+    <title>ShareIt - Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="~/Resources/Login/images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/Resources/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/Resources/Login/css/util.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/Login/css/main.css">
-    <!--===============================================================================================-->
     <script src="~/Resources/js/jquery-3.6.0.min.js"></script>
     <script src="~/Resources/js/Login.js"></script>
 </head>
@@ -67,6 +59,14 @@
                             Ingresar
                         </button>
                     </div>
+                    <div>
+                        <p style="text-align: center;">o</p>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button id="btnLogin" onclick="window.location.href = 'Registrate';" class="login100-form-btn">
+                            Registrate aquí
+                        </button>
+                    </div>
 
                     <div class="text-center p-t-46 p-b-20">
                         <span class="txt2">
@@ -91,7 +91,37 @@
         </div>
     </div>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal" style="pointer-events: none; z-index: 99999">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="loader" id="loader">Cargando...</div>
+        </div>
+
+    </div>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 150px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            margin: auto;
+            padding: 0px;
+            width: 15%;
+        }
+    </style>
 
 
     <!--===============================================================================================-->

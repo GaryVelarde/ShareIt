@@ -11,7 +11,7 @@ namespace ShareIt.Controllers
         // GET: ShareIt
         public ActionResult Index()
         {
-            Session["sUser"] = "Juanito‡Velarde Rios";
+            Session["sUser"] = "Gary‡Velarde Rios";
             return View();
         }
     }
