@@ -22,9 +22,10 @@ namespace ShareIt.Controllers
 
         public ActionResult DatosPersonales(string idUsuario)
         {
-            Session["IDUSAURIO"] = idUsuario;
+            Session["idUsuario"] = idUsuario;
             return View();
         }
+
 
         public JsonResult RegistrarUsuario(string nombres, string apellidos, string correo,
             string clave, DateTime fechaNacimiento, string celular)

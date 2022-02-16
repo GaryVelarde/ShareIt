@@ -15,6 +15,12 @@
     <script src="~/Resources/js/bootstrap/js/bootstrap.js"></script>
     <link href="~/Resources/css/fontawesome-free/css/all.css" rel="stylesheet" />
     <script src="~/Resources/js/Publicacion.js"></script>
+
+    <link href="~/Resources/owl.carousel/assets/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Resources/owl.carousel/assets/owl.theme.default.css" rel="stylesheet" />
+    <script src="~/Resources/owl.carousel/owl.carousel.js"></script>
+    <script src="~/Resources/js/theme.init.js"></script>
+    <script src="~/Resources/js/theme.js"></script>
 </head>
 <body>
     <!-- Content Wrapper. Contains page content -->
@@ -39,6 +45,46 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
+                <div class="row">
+                    <p>Top 10 publicaciones tendencias del día</p>
+                    <div class="owl-carousel owl-theme" data-plugin-carousel data-plugin-options='{ "dots": true, "autoplay": true, "autoplayTimeout": 3000, "loop": true, "margin": 10, "nav": false, "responsive": {"0":{"items":1 }, "600":{"items":3 }, "1000":{"items":6 } }  }'>
+                        <div class="item">
+                            <div class="card img-thumbnail" style="width: 18rem;">
+                                <!--<img class="card-img-top" src="~/Resources/img/projects/project-1.jpg" alt="Card image cap">-->
+                                <div class="card-body">
+                                    <div style="display: flex;">
+                                        <img class="img-circle img-bordered-sm" style="height: 40px; width: 40px;" src="/Resources/img/Publicaciones/user7-128x128.jpg" alt="User Image">
+                                        <p style="font-weight: bold; font-size:15px; padding-top: 10px; padding-left: 10px;">Gary Velarde</p>
+                                    </div>
+                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-link">Ver más...</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card img-thumbnail" style="width: 18rem;">
+                                <img class="card-img-top" src="/Resources/img/Publicaciones/user7-128x128.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p style="font-weight: bold; font-size: 15px;">Gary Velarde</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-link">Ver más...</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-3.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-4.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-5.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-6.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-7.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-1.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-2.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-3.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-4.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-5.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-6.jpg" alt=""></div>
+                        <div class="item"><img class="img-thumbnail" src="~/Resources/img/projects/project-7.jpg" alt=""></div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -399,8 +445,9 @@
             console.log(nombreCompleto);
             console.log(nombres[0]);
         }
-        
+
 
     </script>
+    
 </body>
 </html>

@@ -118,6 +118,14 @@
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="Resources\img\projects\project-1.jpg" />
+    <Content Include="Resources\img\projects\project-2.jpg" />
+    <Content Include="Resources\img\projects\project-3.jpg" />
+    <Content Include="Resources\img\projects\project-4.jpg" />
+    <Content Include="Resources\img\projects\project-5.jpg" />
+    <Content Include="Resources\img\projects\project-6.jpg" />
+    <Content Include="Resources\img\projects\project-7.jpg" />
+    <Content Include="Resources\img\projects\project.jpg" />
     <Content Include="Resources\img\Publicaciones\photo1.png" />
     <Content Include="Resources\img\Publicaciones\photo2.png" />
     <Content Include="Resources\img\Publicaciones\photo3.jpg" />
@@ -143,6 +151,8 @@
     <Content Include="Resources\js\pages\dashboard2.js" />
     <Content Include="Resources\js\pages\dashboard3.js" />
     <Content Include="Resources\js\Publicacion.js" />
+    <Content Include="Resources\js\theme.init.js" />
+    <Content Include="Resources\js\theme.js" />
     <Content Include="Resources\Login\css\main.css" />
     <Content Include="Resources\Login\css\util.css" />
     <Content Include="Resources\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -185,6 +195,10 @@
     <Content Include="Resources\Login\vendor\select2\select2.js" />
     <Content Include="Resources\Login\vendor\select2\select2.min.css" />
     <Content Include="Resources\Login\vendor\select2\select2.min.js" />
+    <Content Include="Resources\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Resources\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="Resources\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="Resources\owl.carousel\owl.carousel.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
