@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class Login : Conexion
+    public class ShareIt : Conexion
     {
+
         Entidad.ResultadoSql resSql = new Entidad.ResultadoSql();
-        Datos.Login log = new Datos.Login();
-        public List<Entidad.ResultadoSql> n_registrarUsuario(string nombres, string apellidos, string correo,
-            string clave, DateTime fechaNacimiento, string celular)
+        Datos.ShareIt log = new Datos.ShareIt();
+        public List<Entidad.ResultadoSql> n_registrarPublicacion(Int64 usuarioId, string descripcion, string privacidad)
         {
             List<Entidad.ResultadoSql> lbeUsu = null;
             using (SqlConnection con = new SqlConnection(Cadena))
@@ -20,7 +20,7 @@ namespace Negocio
                 try
                 {
                     con.Open();
-                    lbeUsu = log.d_registrarUsuario(con, nombres, apellidos, correo, clave, fechaNacimiento, celular);
+                    lbeUsu = log.d_registrarPublicacion(con, usuarioId, descripcion, privacidad);
                 }
                 catch (SqlException ex)
                 {
@@ -30,15 +30,15 @@ namespace Negocio
             return (lbeUsu);
         }
 
-        public List<Entidad.ResultadoSql> n_validarUsuario(string correo, string clave)
+        public List<Entidad.Privacidad> n_listarPrivacidad()
         {
-            List<Entidad.ResultadoSql> lbeUsu = null;
+            List<Entidad.Privacidad> lbeUsu = null;
             using (SqlConnection con = new SqlConnection(Cadena))
             {
                 try
                 {
                     con.Open();
-                    lbeUsu = log.d_validarUsuario(con, correo, clave);
+                    lbeUsu = log.d_listarPrivacidad(con);
                 }
                 catch (SqlException ex)
                 {
@@ -47,5 +47,24 @@ namespace Negocio
             }
             return (lbeUsu);
         }
+
+        public List<Entidad.Publicacion> n_listarTopPublicaciones()
+        {
+            List<Entidad.Publicacion> lbeUsu = null;
+            using (SqlConnection con = new SqlConnection(Cadena))
+            {
+                try
+                {
+                    con.Open();
+                    lbeUsu = log.d_listarTopPublicaciones(con);
+                }
+                catch (SqlException ex)
+                {
+                    //  Log.grabar(ex.ToString(), RutaLog);
+                }
+            }
+            return (lbeUsu);
+        }
+        
     }
 }

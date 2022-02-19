@@ -22,7 +22,7 @@
         $("#validacionIpPassword").removeClass('alert-validate');
     }
     if (usuario.length > 0 && password.length > 0 && validacionCorreo == 1) {
-        alert('si');
+        validarUsuario();
     }
     finCarga();
 };
@@ -176,6 +176,33 @@ function registrarUsuario() {
                     alert(val.Mensaje);
                 } else {
                     alert("Hubo un error al registrar el usuario: " + val.Mensaje);
+                }
+                console.log('Resultado: \n' + val.Codigo + ' / ' + val.Mensaje + ' / ' + val.Datos);
+            });
+        },
+        error: function () {
+        },
+        complete: function () {
+        }
+    })
+};
+function validarUsuario() {
+    var correo = $("#ipUsuario").val();
+    var clave = $("#ipPassword").val();
+    $.ajax({
+        type: 'GET',
+        url: '/Login/ValidarUsuario',
+        data: {
+            correo: correo,
+            clave: clave
+        },
+        success: function (data) {
+            $.each(data, function (i, val) {
+                if (val.Codigo == "1") {
+                    alert(val.Mensaje);
+                    document.location.href = '../ShareIt/Index'
+                } else {
+                    alert(val.Mensaje);
                 }
                 console.log('Resultado: \n' + val.Codigo + ' / ' + val.Mensaje + ' / ' + val.Datos);
             });

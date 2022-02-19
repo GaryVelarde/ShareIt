@@ -118,14 +118,8 @@
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="Resources\css\fontawesome-free\webfonts\fa-solid-900.svg" />
-    <Content Include="Resources\img\projects\project-1.jpg" />
-    <Content Include="Resources\img\projects\project-2.jpg" />
-    <Content Include="Resources\img\projects\project-3.jpg" />
-    <Content Include="Resources\img\projects\project-4.jpg" />
-    <Content Include="Resources\img\projects\project-5.jpg" />
-    <Content Include="Resources\img\projects\project-6.jpg" />
-    <Content Include="Resources\img\projects\project-7.jpg" />
-    <Content Include="Resources\img\projects\project.jpg" />
+    <Content Include="Resources\img\Avatars\avatarHombre.png" />
+    <Content Include="Resources\img\Avatars\avatarMujer.png" />
     <Content Include="Resources\img\Publicaciones\photo1.png" />
     <Content Include="Resources\img\Publicaciones\photo2.png" />
     <Content Include="Resources\img\Publicaciones\photo3.jpg" />
@@ -199,6 +193,9 @@
     <Content Include="Resources\owl.carousel\assets\owl.theme.default.css" />
     <Content Include="Resources\owl.carousel\assets\owl.video.play.png" />
     <Content Include="Resources\owl.carousel\owl.carousel.js" />
+    <Content Include="Resources\Uppy\file-upload.init.js" />
+    <Content Include="Resources\Uppy\uppy.min.css" />
+    <Content Include="Resources\Uppy\uppy.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

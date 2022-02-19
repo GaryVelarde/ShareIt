@@ -35,5 +35,13 @@ namespace ShareIt.Controllers
             resSql = qadoSer.n_registrarUsuario(nombres, apellidos, correo, clave, fechaNacimiento, celular);
             return Json(resSql, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult ValidarUsuario(string correo, string clave)
+        {
+            List<Entidad.ResultadoSql> resSql = null;
+            Negocio.Login qadoSer = new Negocio.Login();
+            resSql = qadoSer.n_validarUsuario(correo, clave);
+            return Json(resSql, JsonRequestBehavior.AllowGet);
+        }
     }
 }
