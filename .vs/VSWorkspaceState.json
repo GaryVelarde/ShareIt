@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Negocio",
+    "\\ShareIt",
+    "\\ShareIt\\Controllers",
+    "\\ShareIt\\Views",
+    "\\ShareIt\\Views\\Login",
+    "\\ShareIt\\Views\\ShareIt"
+  ],
+  "SelectedNode": "\\ShareIt\\Views\\ShareIt\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

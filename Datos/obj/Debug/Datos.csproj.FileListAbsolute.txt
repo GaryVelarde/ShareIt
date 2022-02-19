@@ -7,3 +7,12 @@ D:\UCH\X\TESIS II\SISTEMA\ShareIt\Datos\obj\Debug\Datos.csproj.CoreCompileInputs
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Datos\obj\Debug\Datos.csproj.CopyComplete
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Datos\obj\Debug\Datos.dll
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Datos\obj\Debug\Datos.pdb
+D:\ShareIt\Datos\bin\Debug\Datos.dll
+D:\ShareIt\Datos\bin\Debug\Datos.pdb
+D:\ShareIt\Datos\bin\Debug\Entidad.dll
+D:\ShareIt\Datos\bin\Debug\Entidad.pdb
+D:\ShareIt\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+D:\ShareIt\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\ShareIt\Datos\obj\Debug\Datos.csproj.CopyComplete
+D:\ShareIt\Datos\obj\Debug\Datos.dll
+D:\ShareIt\Datos\obj\Debug\Datos.pdb

@@ -4,3 +4,8 @@ D:\UCH\X\TESIS II\SISTEMA\ShareIt\Entidad\obj\Debug\Entidad.csproj.CoreCompileIn
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Entidad\obj\Debug\Entidad.dll
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Entidad\obj\Debug\Entidad.pdb
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Entidad\obj\Debug\Entidad.csproj.AssemblyReference.cache
+D:\ShareIt\Entidad\bin\Debug\Entidad.dll
+D:\ShareIt\Entidad\bin\Debug\Entidad.pdb
+D:\ShareIt\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+D:\ShareIt\Entidad\obj\Debug\Entidad.dll
+D:\ShareIt\Entidad\obj\Debug\Entidad.pdb

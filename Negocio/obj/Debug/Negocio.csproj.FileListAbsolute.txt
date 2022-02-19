@@ -9,3 +9,14 @@ D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.csproj.CoreCompileIn
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.dll
 D:\UCH\X\TESIS II\SISTEMA\ShareIt\Negocio\obj\Debug\Negocio.pdb
+D:\ShareIt\Negocio\bin\Debug\Negocio.dll
+D:\ShareIt\Negocio\bin\Debug\Negocio.pdb
+D:\ShareIt\Negocio\bin\Debug\Datos.dll
+D:\ShareIt\Negocio\bin\Debug\Entidad.dll
+D:\ShareIt\Negocio\bin\Debug\Datos.pdb
+D:\ShareIt\Negocio\bin\Debug\Entidad.pdb
+D:\ShareIt\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+D:\ShareIt\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\ShareIt\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\ShareIt\Negocio\obj\Debug\Negocio.dll
+D:\ShareIt\Negocio\obj\Debug\Negocio.pdb
