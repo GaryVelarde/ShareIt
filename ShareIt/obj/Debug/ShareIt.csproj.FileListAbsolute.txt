@@ -159,3 +159,4 @@ D:\ShareIt\ShareIt\obj\Debug\ShareIt.csproj.CoreCompileInputs.cache
 D:\ShareIt\ShareIt\obj\Debug\ShareIt.csproj.CopyComplete
 D:\ShareIt\ShareIt\obj\Debug\ShareIt.dll
 D:\ShareIt\ShareIt\obj\Debug\ShareIt.pdb
+D:\ShareIt\ShareIt\obj\Debug\ShareIt.csprojAssemblyReference.cache

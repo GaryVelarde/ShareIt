@@ -161,7 +161,17 @@ function registrarUsuario() {
         success: function (data) {
             $.each(data, function (i, val) {
                 if (val.Codigo == "1") {
-                    //window.location.href = 'DatosPersonales(' + val.Datos + ')';
+                    //window.location.href = 'DatosPersonales/{new idUsuario=' + val.Datos + '}';
+
+                    $.ajax({
+                        url: 'Login/DatosPersonales',
+                        method: "post",
+                        data: {idUsuario : '1'},
+                        success: function (response) {
+
+                        },
+                        async: true
+                    });
 
                     alert(val.Mensaje);
                 } else {
