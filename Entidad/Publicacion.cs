@@ -19,6 +19,8 @@ namespace Entidad
 		public DateTime fechaCreacion { get; set; }
 		public string nombres { get; set; }
 		public string avatar { get; set; }
+		public string archivos { get; set; }
+		public string meGusta { get; set; }
 
 	}
 }

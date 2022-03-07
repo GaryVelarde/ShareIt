@@ -2,7 +2,9 @@
     Layout = null;
 
     List<Entidad.Publicacion> publi;
+    List<Entidad.Publicacion> listaPublicaciones;
     publi = @ViewBag.TopPublicaciones.Data;
+    listaPublicaciones = @ViewBag.Publicaciones.Data;
 }
 <!DOCTYPE html>
 <html>
@@ -116,45 +118,69 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="tab-content">
-                                    <div class="active tab-pane" id="activity">
-                                        <div class="post">
-                                            <div class="user-block">
-                                                <img class="img-circle img-bordered-sm" src="~/Resources/img/Avatars/avatarHombre.png" alt="user image">
-                                                <span class="username">
-                                                    <a href="#">Jonathan Burke Jr.</a>
-                                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                                </span>
-                                                <span class="description">Shared publicly - 7:30 PM today</span>
+                    <ul>
+                        @{
+                            int cont = 0;
+                            Int64 cantLikesMas = 0;
+                            string listaPersonasLikes = "";
+                            string aCantLikes = "";
+                            foreach (Entidad.Publicacion lista in listaPublicaciones)
+                            {
+                                aCantLikes = "aCantLikes" + lista.publicacionId;
+                                if (lista.cantLikes < 1)
+                                {
+                                    listaPersonasLikes = "Sé el primero en indicar que te gusta esta publicación!";
+                                }
+                                else {
+                                    cantLikesMas = lista.cantLikes - 5;
+                                    listaPersonasLikes = "title='Hola mundoHola&#013;y " + cantLikesMas+" personas más...'";
+                                }
+                                <li style="list-style: none; margin-left: -40px;">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="tab-content">
+                                                    <div class="active tab-pane" id="activity">
+                                                        <div class="post">
+                                                            <div class="user-block">
+                                                                <img class="img-circle img-bordered-sm" src="~/Resources/img/Avatars/@lista.avatar" alt="user image">
+                                                                <span class="username">
+                                                                    <a href="#">@lista.nombres</a>
+                                                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                                </span>
+                                                                <span class="description">Shared publicly - 7:30 PM today</span>
+                                                            </div>
+                                                            <!-- /.user-block -->
+                                                            <p>
+                                                                @lista.descripcion
+                                                            </p>
+
+                                                            <p>
+                                                                <a class="link-black text-sm mr-2" style="cursor: pointer;"><i class="fas fa-share mr-1"></i> Compartir</a>
+                                                                @if (lista.meGusta == "si")
+                                                                {
+                                                                    <a onclick="actualizarLike('0',@lista.publicacionId,9,this)" class="link-black text-sm" style="color: blue; cursor: pointer;"><i class="far fa-thumbs-up mr-1"></i> </a>
+                                                                }else{
+                                                                    <a onclick="actualizarLike('1',@lista.publicacionId,9,this)" class="link-black text-sm" style="cursor: pointer;"><i class="far fa-thumbs-up mr-1"></i> </a>
+                                                                }
+                                                                <a id="@aCantLikes" class="link-black text-sm" style="cursor: pointer;" @listaPersonasLikes>@lista.cantLikes</a>
+                                                                <a class="link-black text-sm" style="cursor: pointer;"><i class="far fa-comment-alt mr-1"></i></a>
+                                                                <a class="link-black text-sm" style="cursor: pointer;">@lista.cantComentarios</a>
+                                                            </p>
+
+                                                            <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!-- /.user-block -->
-                                            <p>
-                                                Lorem ipsum represents a long-held tradition for designers,
-                                                typographers and the like. Some people hate it and argue for
-                                                its demise, but others ignore the hate as they create awesome
-                                                tools to help create filler text for everyone from bacon lovers
-                                                to Charlie Sheen fans.
-                                            </p>
-
-                                            <p>
-                                                <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                                <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-
-                                                <a href="#" class="link-black text-sm">
-                                                    <i class="far fa-comment-alt mr-1"></i> Comments (5)
-                                                </a>
-                                            </p>
-
-                                            <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </li>
+                                cont ++;
+                            }
+                        }
+                    </ul>
+                    <input id="ipContadorPublicaciones" value="@cont" />
 
                     <!-- /.col -->
                     <div class="col-md-12">
@@ -449,7 +475,7 @@
                         <div class="user-block" style="height: 50px;">
                             <img class="img-circle img-bordered-sm" src="~/Resources/img/Publicaciones/user7-128x128.jpg" alt="User Image">
                             <span class="username" style="display: flex; width: 90%">
-                                <div style="width: 80%"><p>Gary Velarde</p></div>
+                                <div style="width: 80%"><p style="padding-top: 7px;">Gary Velarde</p></div>
                                 <div style="width: 20%; display: flex;">
                                     <p><i class="fas fa-lock"></i> Privacidad&nbsp;&nbsp;&nbsp;</p>
                                     <select id="cboPrivacidad" style="margin-bottom: 50px;">
@@ -459,19 +485,32 @@
                         </div>
 
                     </div>
-                    <textarea id="ipPublicacionTexto" class="txtAreaShareIt" onkeyup="textAreaAdjust(this);" placeholder=""></textarea>
-                    <div class="card">
+                    <div class="col-md-12">
+                        <textarea id="ipPublicacionTexto" class="txtAreaShareIt" onkeyup="textAreaAdjust(this);" placeholder=""></textarea>
+                    </div>
+
+                    <div class="card" id="divContentAgregarArchivos" style="display: none;">
                         <div class="card-body">
+                            <button type="button" class="close" aria-label="Close" onclick="ocultarAgregarArchivos();">
+                                <span aria-hidden="true">×</span>
+                            </button>
                             <div class="row">
-                                <div class="col-md-12" style=" display: flex; justify-content: center;">
+                                <div class="col-md-12" style="display: flex; justify-content: center;">
                                     <style>
-                                        .uppy-size--md{
+                                        .uppy-size--md {
                                             height: 300px !important;
                                         }
                                     </style>
                                     <div id="drag-drop-area" style="max-height: 300px;"></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div id="divContentMensajeSubirArchivo" class="card" style="border: 2px dashed #757575; cursor: pointer; max-height: 60px;" onclick="mostrarAgregarArchivos();">
+                        <div class="card-body">
+                                <div class="col-md-12" style="display: flex; justify-content: center;">
+                                   <p style="color: #757575"><i class="fas fa-plus"></i> Subir archivos o imágenes a tu publicación</p>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -502,6 +541,5 @@
     </script>
     <script src="~/Resources/Uppy/uppy.min.js"></script>
     <script src="~/Resources/Uppy/file-upload.init.js"></script>
-    
 </body>
 </html>

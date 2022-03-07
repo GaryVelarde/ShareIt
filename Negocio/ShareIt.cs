@@ -65,6 +65,42 @@ namespace Negocio
             }
             return (lbeUsu);
         }
-        
+
+        public List<Entidad.Publicacion> n_listarPublicaciones(Int64 usuarioId)
+        {
+            List<Entidad.Publicacion> lbeUsu = null;
+            using (SqlConnection con = new SqlConnection(Cadena))
+            {
+                try
+                {
+                    con.Open();
+                    lbeUsu = log.d_listarPublicaciones(con, usuarioId);
+                }
+                catch (SqlException ex)
+                {
+                    //  Log.grabar(ex.ToString(), RutaLog);
+                }
+            }
+            return (lbeUsu);
+        }
+
+        public List<Entidad.ResultadoSql> n_actualizarLike(string tipoLike, Int64 publicacionId, Int64 usuarioId)
+        {
+            List<Entidad.ResultadoSql> lbeUsu = null;
+            using (SqlConnection con = new SqlConnection(Cadena))
+            {
+                try
+                {
+                    con.Open();
+                    lbeUsu = log.d_actualizarLike(con, tipoLike, publicacionId, usuarioId);
+                }
+                catch (SqlException ex)
+                {
+                    //  Log.grabar(ex.ToString(), RutaLog);
+                }
+            }
+            return (lbeUsu);
+        }
+
     }
 }

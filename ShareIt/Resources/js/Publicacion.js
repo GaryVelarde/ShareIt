@@ -85,3 +85,54 @@ function ListarTopPublicaciones() {
         }
     })
 };
+function mostrarAgregarArchivos() {
+    document.getElementById('divContentMensajeSubirArchivo').style.display = 'none';
+    $("#divContentAgregarArchivos").fadeIn();
+};
+function ocultarAgregarArchivos() {
+    document.getElementById('divContentAgregarArchivos').style.display = 'none';
+    $("#divContentMensajeSubirArchivo").fadeIn();
+};
+function actualizarLike(tipoLike, publicacionId, usuarioId, etiquetaA) {
+    var cantLikesPublicacion = $("#aCantLikes" + publicacionId).text();
+    $.ajax({
+        type: 'GET',
+        url: '/ShareIt/ActualizarLike',
+        data: {
+            tipoLike: tipoLike,
+            publicacionId: publicacionId,
+            usuarioId: usuarioId
+        },
+        success: function (data) {
+            var public = '';
+            $.each(data, function (i, val) {
+                if (val.Codigo == '1') {
+
+                    etiquetaA.style.color = 'blue';
+                    $("#aCantLikes" + publicacionId).text((parseInt(cantLikesPublicacion) + 1));
+                    etiquetaA.setAttribute('onclick', "actualizarLike('0'," + publicacionId + "," + usuarioId + ", this)");
+
+                }
+                else if (val.Codigo == '2') {
+
+                    etiquetaA.style.color = '';
+                    $("#aCantLikes" + publicacionId).text((cantLikesPublicacion - 1));
+                    etiquetaA.setAttribute('onclick', "actualizarLike('1'," + publicacionId + "," + usuarioId + ", this)");
+
+                }
+                else if (val.Codigo == '0') {
+
+                }
+                mostrarResultado('actualizar like', val.Codigo, val.Mensaje);
+            });
+            $("#divCarruselTopPublicaciones").append(public);
+        },
+        error: function () {
+        },
+        complete: function () {
+        }
+    })
+};
+function mostrarResultado(nombreOperacion, codigo, mensaje) {
+    console.log('------------------------Resultado de ' + nombreOperacion + '------------------------\nCodigo: ' + codigo + '\nMensaje: ' + mensaje);
+};

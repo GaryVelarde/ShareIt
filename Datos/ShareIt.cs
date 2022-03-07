@@ -119,5 +119,86 @@ namespace Datos
             return (lbeUsu);
         }
 
+        public List<Entidad.Publicacion> d_listarPublicaciones(SqlConnection con, Int64 usuarioId)
+        {
+            List<Entidad.Publicacion> lbeUsu = null;
+
+            SqlCommand cmd = new SqlCommand("sp_listarPublicaciones", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
+
+            SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.SingleResult);
+
+            if (drd != null)
+            {
+
+                int pospublicacionId = drd.GetOrdinal("publicacionId");
+                int posnombres = drd.GetOrdinal("nombres");
+                int posavatar = drd.GetOrdinal("avatar");
+                int posdescripcion = drd.GetOrdinal("descripcion");
+                int poscantLikes = drd.GetOrdinal("cantLikes");
+                int poscantComentarios = drd.GetOrdinal("cantComentarios");
+                int posfechaCreacion = drd.GetOrdinal("fechaCreacion");
+                int posarchivos = drd.GetOrdinal("archivos");
+                int posmeGusta = drd.GetOrdinal("meGusta");
+
+                Entidad.Publicacion clbEtr;
+                lbeUsu = new List<Entidad.Publicacion>();
+                while (drd.Read())
+                {
+                    clbEtr = new Entidad.Publicacion();
+                    clbEtr.publicacionId = drd.GetInt64(pospublicacionId);
+                    clbEtr.nombres = drd.GetString(posnombres);
+                    clbEtr.avatar = drd.GetString(posavatar);
+                    clbEtr.descripcion = drd.GetString(posdescripcion);
+                    clbEtr.cantLikes = drd.GetInt64(poscantLikes);
+                    clbEtr.cantComentarios = drd.GetInt64(poscantComentarios);
+                    clbEtr.fechaCreacion = drd.GetDateTime(posfechaCreacion);
+                    clbEtr.archivos = drd.GetString(posarchivos);
+                    clbEtr.meGusta = drd.GetString(posmeGusta);
+
+                    lbeUsu.Add(clbEtr);
+                }
+                drd.Close();
+            }
+            return (lbeUsu);
+        }
+
+        public List<Entidad.ResultadoSql> d_actualizarLike(SqlConnection con, string tipoLike, Int64 publicacionId, Int64 usuarioId)
+        {
+            List<Entidad.ResultadoSql> lbeUsu = null;
+
+            SqlCommand cmd = new SqlCommand("sp_actualizarLike", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@tipoLike", tipoLike);
+            cmd.Parameters.AddWithValue("@publicacionId", publicacionId);
+            cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
+
+            SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.SingleResult);
+
+            if (drd != null)
+            {
+                int posCodigo = drd.GetOrdinal("Codigo");
+                int posMensaje = drd.GetOrdinal("Mensaje");
+                int posDatos = drd.GetOrdinal("Datos");
+
+                Entidad.ResultadoSql clbEtr;
+                lbeUsu = new List<Entidad.ResultadoSql>();
+                while (drd.Read())
+                {
+                    clbEtr = new Entidad.ResultadoSql();
+                    clbEtr.Codigo = drd.GetString(posCodigo);
+                    clbEtr.Mensaje = drd.GetString(posMensaje);
+                    clbEtr.Datos = drd.GetString(posDatos);
+
+                    lbeUsu.Add(clbEtr);
+                }
+                drd.Close();
+            }
+            return (lbeUsu);
+        }
+
     }
 }

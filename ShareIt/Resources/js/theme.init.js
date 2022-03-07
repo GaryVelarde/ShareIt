@@ -52,15 +52,6 @@
             });
         });
     }
-}).apply(this, [jQuery]); (function (theme, $) { 'use strict'; if (typeof theme.Nav !== 'undefined') { theme.Nav.initialize(); } }).apply(this, [window.theme, jQuery]); (function ($) { 'use strict'; if (typeof Switch !== 'undefined' && $.isFunction(Switch)) { $(function () { $('[data-plugin-ios-switch]').each(function () { var $this = $(this); $this.themePluginIOS7Switch(); }); }); } }).apply(this, [jQuery]); (function ($) {
-    'use strict'; if ($.isFunction($.fn['themePluginLazyLoad'])) {
-        $(function () {
-            $('[data-plugin-lazyload]:not(.manual)').each(function () {
-                var $this = $(this), opts; var pluginOptions = theme.fn.getOptions($this.data('plugin-options')); if (pluginOptions)
-                    opts = pluginOptions; $this.themePluginLazyLoad(opts);
-            });
-        });
-    }
 }).apply(this, [jQuery]); (function ($) {
     'use strict'; if ($.isFunction($.fn['magnificPopup'])) {
         $(function () {
